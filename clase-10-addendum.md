@@ -67,3 +67,91 @@ Así que esto es lo que sucede cuando se carga la página:
 </body>
 </html>
 ```
+## 2. Mostrando datos en tiempo real
+
+En este ejemplo usaremos dos archivos, uno para el `html` y otro para el `javascript`. Asegúrate de que **los dos archivos estén en el mismo folder**.
+El API que se usa en el video no está funcionando, así que la cambié por otra y por ende tuve que cambiar el código un poco.  
+
+Similar al primer ejercicio, el html tiene un mensaje donde dice "Cargando datos..." (en inglés), y este mensaje se reemplaza con los datos cuando los recibimos.
+La única diferencia es que el API que estamos usando manda diferentes datos cada vez que la llamamos, por eso usamos la función `setInterval` para llamar el API cada 5 segundos.
+Así que el mensaje en la página debe cambia cada 5 segundos.
+
+`ejercicio-2.html`
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Data Display</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .data-container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        p {
+            margin: 10px 0;
+        }
+    </style>
+    <script src="ejercicio-2.js"></script>
+</head>
+<body>
+    <div class="data-container">
+        <h1>Real-Time Data Display</h1>
+        <div id="dataInfo">
+            <p>Loading data...</p>
+        </div>
+    </div>
+</body>
+</html>
+```
+
+`ejercicio-2.js`
+```javascript
+async function fetchData(callback) {
+    const apiUrl = 'https://catfact.ninja/fact';
+
+    try {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+        callback(null, data);
+    } catch (error) {
+        callback(error, null);
+    }
+}
+
+const handleData = (error, data) => {
+    const dataInfoElement = document.getElementById('dataInfo');
+
+    if (error) {
+        dataInfoElement.innerHTML = `<p>Error fetching data: ${error.message}</p>`;
+    } else {
+
+        dataInfoElement.innerHTML = `
+            <p>Cat Fact: ${data.fact}</p>
+        `;
+    }
+};
+
+const updateData = () => {
+    fetchData(handleData);
+};
+
+updateData();
+
+setInterval(updateData, 5000);
+```
