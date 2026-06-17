@@ -1,11 +1,38 @@
 # Building a Complete Web Page with Bootstrap
 
 Completar el ejercicio en [esta pagina](https://codingtemple.disco.co/p/frameworks-intro-to-javascript/curriculum/overview?u=9ef06cbf-5f98-4d4b-80a9-61d788cdf57a&drawerTab=module)  
-Solo tienen que completar la secci&oacute;n que dice "Project Requirements"
 
 Asegurense de crear su propia version de la solucion y no copiar la solution en la leccion :)
 
+## Requisitos del Proyecto
+### 1. Barra de Navegación (Obligatorio)
+- La **barra de navegación** debe estar **fija en la parte superior** y colapsar en un **menú hamburguesa** en pantallas más pequeñas.
+- Debe tener enlaces para **Panel de Control, Usuarios y Configuración.**
+### 2. Sección del Panel de Control (Obligatorio)
+- Debajo de la barra de navegación, crea una sección de **resumen del panel de control** con tres **tarjetas de Bootstrap** que muestren:
+  - **Usuarios Totales**
+  - **Usuarios Activos**
+  - **Aprobaciones Pendientes**
+Cada tarjeta debe tener un **ícono**, un **título** y un **número**.
+### 3. Formulario de Registro de Usuario (Obligatorio)
+- Crea un **formulario** donde un administrador pueda **agregar un nuevo usuario**.
+- El formulario debe incluir:
+  - Campo de entrada para **Nombre Completo**
+  - Campo de entrada para **Dirección de Correo Electrónico**
+  - **Selección de Rol** (Menú desplegable con opciones: Administrador, Usuario, Invitado)
+  - **Botón de Enviar**
+- Usa **validación de entrada** para los campos obligatorios.
+### 4. Tabla de Usuarios (Obligatorio)
+- Muestra una **tabla con estilo Bootstrap** que liste a todos los usuarios registrados.
+- La tabla debe incluir:
+  - **ID de Usuario**
+  - **Nombre**
+  - **Correo Electrónico**
+  - **Rol**
+  - **Estado** (Activo o Inactivo)
+- Usa **filas alternadas (striped)** y un **efecto al pasar el cursor (hover)** para mejorar la legibilidad.
 
+---
 ## Project Requirements
 
 ### 1. Navigation Bar (Required)
