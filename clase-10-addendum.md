@@ -155,3 +155,92 @@ updateData();
 
 setInterval(updateData, 5000);
 ```
+
+## 3. Peticiones en sequencia
+
+En este ejercicio usamos una API que nos da una imagen al azar. Vamos a pedir una imagen y cuando se termine la primera petición pediremos otra imagen.
+
+`ejercicio-3.html`
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Continuous Image Fetching</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .image-container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+    </style>
+    <script src="ejercicio-3.js" defer></script>
+</head>
+
+<body>
+    <div class="image-container" id="imageContainer">
+        <h1>Continuous Image Fetching</h1>
+        <div id="images"></div>
+    </div>
+</body>
+</html>
+```
+
+`ejercicio-3.js`
+```javascript
+async function fetchRandomImages() {
+  const apiUrl = "https://picsum.photos/200/300";
+
+  try {
+    const response = await fetch(apiUrl);
+    const imageUrl = response.url;
+    return imageUrl;
+  } catch (error) {
+    console.error("Error fetching image:", error);
+    return null;
+  }
+}
+
+const handleImages = async () => {
+  const imageContainer = document.getElementById("images");
+
+  try {
+    const imageUrl1 = await fetchRandomImages();
+    const imageUrl2 = await fetchRandomImages();
+
+    imageContainer.innerHTML = `
+        <img src="${imageUrl1}" alt="Image 1">
+        <img src="${imageUrl2}" alt="Image 2">
+    `;
+  } catch (error) {
+    console.error("Error handling images:", error);
+  }
+};
+
+const updateImages = () => {
+  handleImages();
+};
+
+updateImages();
+
+setInterval(updateImages, 5000);
+```
