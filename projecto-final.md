@@ -49,7 +49,7 @@ Create an application that allows users to manage tasks.
 - Add tasks
 - Mark tasks as completed
 - Delete tasks
-- Store tasks using Local Storage
+- Store tasks using Local Storage (optional)
 - Responsive interface
 
 **Concepts Demonstrated:**
@@ -68,7 +68,7 @@ Crea una aplicación para administrar tareas pendientes.
 - Agregar tareas.
 - Marcar tareas como completadas.
 - Eliminar tareas.
-- Guardar tareas utilizando Local Storage.
+- Guardar tareas utilizando Local Storage. (opcional)
 - Interfaz adaptable a distintos dispositivos.
 
 **Conceptos Demostrados:**
