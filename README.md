@@ -6,22 +6,22 @@
 
 ### HTML (Choose one / Escoge uno)
 
-- Personal profile
-- Restaurant menu
+- Personal Profile / Perfil Personal
+- Restaurant Menu / Menú de Restaurante
 
 ### JavaScript (Choose two / Escoge dos)
 
-- Character counter
-- Tip calculator (optional: split calc)
-- Unit converter
+- Character Counter / Contador de Caracteres
+- Tip Calculator / Calculadora de Propinas
+- Unit Converter / Conversor de Unidades
 
 ### Final project (Choose one / Escoge uno)
 
-- Small Business website
-- Todo list app
-- Quiz Application
-- AI ChatBot (Advanced)
-- Weather app (Advanced)
+- Small Business Website / Sitio Web para Pequeña Empresa
+- Todo List App / Aplicación de Lista de Tareas
+- Quiz Application / Aplicación de Cuestionarios
+- AI ChatBot (Advanced) / ChatBot con IA (Avanzado)
+- Weather App (Advanced) / Aplicación del Clima (Avanzada)
 
 # Como entegrar ejercicios
 
