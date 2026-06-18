@@ -9,7 +9,7 @@
 - Personal profile
 - Restaurant menu
 
-### JavaScript (Choose two / Escoge uno)
+### JavaScript (Choose two / Escoge dos)
 
 - Character counter
 - Tip calculator (optional: split calc)
