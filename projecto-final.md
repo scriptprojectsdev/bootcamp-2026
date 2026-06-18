@@ -78,7 +78,7 @@ Crea una aplicación para administrar tareas pendientes.
 - Almacenamiento local.
 - Manipulación del DOM.
 
-### Quiz Application / Aplicación de Cuestionarios
+### Quiz Application / Aplicación de Cuestionarios (Intermediate)
 
 Create an interactive quiz with scoring.
 
